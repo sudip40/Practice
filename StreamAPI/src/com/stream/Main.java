@@ -2,6 +2,7 @@ package com.stream;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -57,6 +58,12 @@ public class Main {
 		System.out.println("==============================================");
 		System.out.println("String Sorting Desending: ");
 		list1.stream().sorted((x,y)->y.compareTo(x)).forEach((i)->System.out.println(i));
+		
+		Optional<String> min= list1.stream().min((x,y)->x.compareTo(y));
+		System.out.println("Min val is : "+min.get());
+		System.out.println("==============================================");
+		Optional<String> max=list1.stream().max((x,y)->x.compareTo(y));
+		System.out.println("Max val is : "+max.get());
 	}
 
 }
